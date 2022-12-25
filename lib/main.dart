@@ -49,7 +49,10 @@ var arrName = [1, 2, 3, 4, 5, 6, 7, 8, 9,10,11];
       body: ListView.separated(
         itemBuilder: (context, index) {
           
-          return InkWell(
+          return Card(
+            elevation: 7,
+            shadowColor: Colors.blue,
+            child: InkWell(
             child: ListTile(
             leading: CircleAvatar(
               backgroundImage: AssetImage("assets/images/client.png"),
@@ -61,6 +64,7 @@ var arrName = [1, 2, 3, 4, 5, 6, 7, 8, 9,10,11];
           onTap: () {
             
           },
+          ),
           );
         },
         itemCount: arrName.length,
