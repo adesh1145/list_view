@@ -33,7 +33,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   
-var arrName = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+var arrName = [1, 2, 3, 4, 5, 6, 7, 8, 9,10,11];
   // void createList() {
   //   for (int i = 10; i < 40; i++) {
   //     arrName.add(i);
@@ -49,13 +49,25 @@ var arrName = [1, 2, 3, 4, 5, 6, 7, 8, 9];
       body: ListView.separated(
         itemBuilder: (context, index) {
           
-          return Text(arrName[index].toString());
+          return InkWell(
+            child: ListTile(
+            leading: CircleAvatar(
+              backgroundImage: AssetImage("assets/images/client.png"),
+              foregroundImage: AssetImage("assets/images/client.png")),
+            title: Text("Name"),
+            subtitle: Text("Number"),
+            trailing: Text("Today"),
+          ),
+          onTap: () {
+            
+          },
+          );
         },
         itemCount: arrName.length,
         separatorBuilder: (context, index) {
           return Divider(
-            height: 100,
-            thickness: 2,
+            height: 1,
+            thickness: 3,
           );
         },
       ),
